@@ -1,0 +1,19 @@
+{
+  "name": "auroraconsoledesktop",
+  "version": "1.0.0",
+  "description": "桌面应用联系",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duanzhenke/auroraConsoleDesktop.git"
+  },
+  "author": "zhenke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duanzhenke/auroraConsoleDesktop/issues"
+  },
+  "homepage": "https://github.com/duanzhenke/auroraConsoleDesktop#readme"
+}
