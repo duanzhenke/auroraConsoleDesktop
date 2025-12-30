@@ -4,6 +4,7 @@
   "description": "桌面应用联系",
   "main": "index.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/duanzhenke/auroraConsoleDesktop/issues"
   },
-  "homepage": "https://github.com/duanzhenke/auroraConsoleDesktop#readme"
+  "homepage": "https://github.com/duanzhenke/auroraConsoleDesktop#readme",
+  "devDependencies": {
+    "electron": "^39.2.7"
+  }
 }
