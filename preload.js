@@ -6,8 +6,9 @@ contextBridge.exposeInMainWorld('electronAPI', {
 })
 
 // 这里的这个名字不能重复 要不然会报错
-contextBridge.exposeInMainWorld('electronAPI1', {
-  openFile: () => ipcRenderer.invoke('dialog:openFile')
+contextBridge.exposeInMainWorld('electronSaveFile', {
+  openFile: () => ipcRenderer.invoke('dialog:openFile'),
+  saveFile: (content) => ipcRenderer.invoke('dialog:saveFile', content) // ← 新增
 })
 
 // 大概流程是  

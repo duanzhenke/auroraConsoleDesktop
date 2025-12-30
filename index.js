@@ -10,6 +10,30 @@ ipcMain.handle('dialog:openFile', async () => {
   return await fs.readFile(filePaths[0], 'utf8')
 })
 
+ipcMain.handle('dialog:saveFile', async (event, content) => {
+  const result = await dialog.showSaveDialog({
+    title: '保存文件',
+    defaultPath: 'untitled.txt',
+    filters: [
+      { name: 'Text Files', extensions: ['txt'] },
+      { name: 'All Files', extensions: ['*'] }
+    ]
+  })
+
+  if (result.canceled || !result.filePath) {
+    return { success: false, message: '用户取消了保存' }
+  }
+
+  try {
+    await fs.writeFile(result.filePath, content, 'utf8')
+    return { success: true, filePath: result.filePath }
+  } catch (err) {
+    console.error('保存失败:', err)
+    return { success: false, message: err.message }
+  }
+})
+
+
 // 注册 ping 处理
 ipcMain.handle('ping', async (event) => {
   console.log('get  ping request!!!')
